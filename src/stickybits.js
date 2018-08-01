@@ -88,7 +88,7 @@ class Stickybits {
       const el = this.els[i]
       const styles = el.style
       // set vertical position
-      styles[vp] = vp === 'top' && !ns ? `${p.stickyBitStickyOffset}px` : ''
+      styles[vp] = (vp === 'top' || vp === 'bottom') && !ns ? `${p.stickyBitStickyOffset}px` : ''
       styles.position = pv !== 'fixed' ? pv : ''
       if (pv === 'fixed' || p.useStickyClasses) {
         const instance = this.addInstance(el, p)
